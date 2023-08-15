@@ -1,0 +1,13 @@
+version: "3"
+services:
+  brs_python3:
+    container_name: brs_python3
+    build:
+      context: ./.docker/python
+      args:
+        ENV_NAME: $ENV_NAME
+    volumes:
+      - ./:/app
+    ports:
+      - $WEB_PORT:8888
+    command: jupyter lab --allow-root --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token=''
