@@ -11,3 +11,5 @@ RUN python3 -m pip install --upgrade pip
 
 # Jupyterだけは起動に必要なので先んじてインストール
 RUN python3 -m pip install --no-cache-dir jupyter
+
+COPY ./project.pth /usr/local/lib/python3.10/site-packages
