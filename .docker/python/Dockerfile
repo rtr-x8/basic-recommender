@@ -9,7 +9,8 @@ RUN python3 -m pip install --upgrade pip
 #RUN python3 -m venv $ENV_NAME
 #RUN . /$ENV_NAME/bin/activate
 
-# Jupyterだけは起動に必要なので先んじてインストール
-RUN python3 -m pip install --no-cache-dir jupyter
+
+COPY requirements.txt /.tmp/requirements.txt
+RUN python3 -m pip install -r /.tmp/requirements.txt
 
 COPY ./project.pth /usr/local/lib/python3.10/site-packages
