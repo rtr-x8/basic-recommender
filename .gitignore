@@ -3,3 +3,4 @@
 .DS_Store
 .idea
 .Trash-0
+__pycache__
