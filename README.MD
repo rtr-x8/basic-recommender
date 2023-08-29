@@ -51,3 +51,6 @@ jupyter notebookファイルを格納している。
 - src/notification: slack等に通知する
 - src/recommender: 推薦システムのクラス郡
 - src/recommender/contents_based: 内容ベース推薦の実装
+- src/recommender/avd: 特異値分解推薦の実装
+- src/recommender/avd: 特異値分解推薦の実装
+- 
