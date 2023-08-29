@@ -52,5 +52,6 @@ jupyter notebookファイルを格納している。
 - src/recommender: 推薦システムのクラス郡
 - src/recommender/contents_based: 内容ベース推薦の実装
 - src/recommender/avd: 特異値分解推薦の実装
-- src/recommender/avd: 特異値分解推薦の実装
-- 
+
+# 参考
+https://www.oreilly.co.jp/books/9784873119663/
