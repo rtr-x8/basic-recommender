@@ -37,6 +37,24 @@ class DataLoader:
         decompress_path = f'{self.DATA_DIRECTORY}/{self.directory_name}'
         a = shutil.unpack_archive(self.zip_file_path(), decompress_path)
 
+    def load(self):
+
+        if not self.exists():
+            print('file is not found. downloading...')
+            self.download()
+            self.decompress()
+        else:
+            print('file is found. loading...')
+
+        data = {}
+        for file in self.files:
+            file_path = self.buildFilePath(file)
+            key = file.split('.csv')[0]
+            data.update({
+                key: pd.read_csv(file_path)
+            })
+        return data
+
 
 class MovieLens25MDataLoader(DataLoader):
     def __init__(self):
@@ -51,24 +69,6 @@ class MovieLens25MDataLoader(DataLoader):
     def buildFilePath(self, file_name):
         return f'{self.DATA_DIRECTORY}/{self.directory_name}/ml-25m/{file_name}'
 
-    def load(self):
-
-        if not self.exists():
-            print('file is not found. downloading...')
-            self.download()
-            self.decompress()
-        else:
-            print('file is found. loading...')
-
-        data = {}
-        for file in self.files:
-            file_path = self.buildFilePath(file)
-            key = file.split('.csv')[0]
-            data.update({
-                key: pd.read_csv(file_path)
-            })
-        return data
-
 class MovieLens20MDataLoader(DataLoader):
     def __init__(self):
         self.url = 'https://files.grouplens.org/datasets/movielens/ml-20m.zip'
@@ -82,22 +82,16 @@ class MovieLens20MDataLoader(DataLoader):
     def buildFilePath(self, file_name):
         return f'{self.DATA_DIRECTORY}/{self.directory_name}/ml-20m/{file_name}'
 
-    def load(self):
 
-        if not self.exists():
-            print('file is not found. downloading...')
-            self.download()
-            print('downloaded.')
-            self.decompress()
-            print('decompressed.')
-        else:
-            print('file is found. loading...')
+class MovieLens10MDataLoader(DataLoader):
+    def __init__(self):
+        self.url = 'https://files.grouplens.org/datasets/movielens/ml-10m.zip'
+        self.directory_name = 'ml-10m'
+        self.zip_file_name = 'ml-10m.zip'
+        self.files = [
+            'genome-scores.csv', 'genome-tags.csv', 'links.csv',
+            'movies.csv', 'ratings.csv', 'tags.csv'
+        ]
 
-        data = {}
-        for file in self.files:
-            file_path = self.buildFilePath(file)
-            key = file.split('.csv')[0]
-            data.update({
-                key: pd.read_csv(file_path)
-            })
-        return data
+    def buildFilePath(self, file_name):
+        return f'{self.DATA_DIRECTORY}/{self.directory_name}/ml-10m/{file_name}'
