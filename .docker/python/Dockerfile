@@ -3,6 +3,8 @@ FROM python:3.10-slim
 ARG ENV_NAME
 WORKDIR /app
 
+RUN apt update
+RUN apt-get install build-essential -y #一部パッケージにgccが必要なため
 RUN python3 -m pip install --upgrade pip
 
 #RUN python3 -m pip install --no-cache-dir virtualenv
