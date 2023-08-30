@@ -57,8 +57,8 @@ jupyter notebookファイルを格納している。
 
 # 参考
 
-推薦システム実践入門　風間 正弘、飯塚 洸二郎、松村 優也
+推薦システム実践入門　風間 正弘、飯塚 洸二郎、松村 優也    
 https://www.oreilly.co.jp/books/9784873119663/
 
-推薦システムのアルゴリズム　神嶌 敏弘
+推薦システムのアルゴリズム　神嶌 敏弘   
 https://www.kamishima.net/archive/recsysdoc.pdf
