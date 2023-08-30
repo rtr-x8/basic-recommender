@@ -43,6 +43,8 @@ jupyter notebookファイルを格納している。
 - notebook/mf: MatrixFactorizationの実行
 - notebook/svd: 特異値分解の実行
 
+他諸々
+
 ## src
 
 諸々のスクリプトをまとめている。
@@ -54,4 +56,9 @@ jupyter notebookファイルを格納している。
 - src/recommender/avd: 特異値分解推薦の実装
 
 # 参考
+
+推薦システム実践入門　風間 正弘、飯塚 洸二郎、松村 優也
 https://www.oreilly.co.jp/books/9784873119663/
+
+推薦システムのアルゴリズム　神嶌 敏弘
+https://www.kamishima.net/archive/recsysdoc.pdf
